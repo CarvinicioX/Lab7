@@ -24,42 +24,42 @@ string Evidenca::toString() const{
 	return ss.str();
 }
 
-void setNom(string nom){
+void Evidenca::Evidenca::setNom(string nom){
 	this->nom=nom;
 }
 
-void setTipo_objeto(string tipo_objeto){
+void Evidenca::setTipo_objeto(string tipo_objeto){
 	this->tipo_objeto=tipo_objeto;
 }
 
-void setLugar(string lugar){
+void Evidenca::setLugar(string lugar){
 	this->lugar=lugar;
 }
 
-void setHuellas(bool huellas){
+void Evidenca::setHuellas(bool huellas){
 	this->huellas=huellas;
 }
 
-void setProcesada(bool procesada){
+void Evidenca::setProcesada(bool procesada){
 	this->procesada=procesada;
 }
 
-string getNom() const{
+string Evidenca::getNom() const{
 	return nom;
 }
 
-string getTipo_objeto() const{
+string Evidenca::getTipo_objeto() const{
 	return tipo_objeto;
 }
 
-string getLugar() const{
+string Evidenca::getLugar() const{
 	return lugar;
 }
 
-bool getHuellas() const{
+bool Evidenca::getHuellas() const{
 	return huellas;
 }	
 	
-bool getProcesada() const{
+bool Evidenca::getProcesada() const{
 	return procesada;
 }
