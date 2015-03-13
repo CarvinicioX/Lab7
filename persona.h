@@ -12,6 +12,7 @@ public:
     string setUsuario(string);
     string setPassword(string);
     string setBirthdate(string);
+    string setId(string);
     Persona(const Persona&);
     int setEdad(int);
     void getNombre()const;
@@ -19,7 +20,7 @@ public:
     void getPassword()const;
     void getId()const;
     void getBirthdate()const;
-    string toString()const;
+    virtual string toString()const;
 
 };
 
