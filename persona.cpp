@@ -1,6 +1,12 @@
 #include "persona.h"
 #include <string>
+#include <sstream>
 #include <iostream>
+
+using std::string;
+using std::stringstream;
+
+
 Persona::Persona(string nombre_real, string usuario, string password, int edad, string birthdate, string identidad){
     setNombre(nombre_real);
     setUsuario(usuario);
@@ -60,4 +66,3 @@ string Persona::toString()const{
     ss << "Identidad: " << identidad << " Nombre" << nombre;
     return ss.str();
 }
-
