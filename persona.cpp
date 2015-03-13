@@ -31,15 +31,6 @@ void Persona::setBirthdate(string birthdate){
     this->birthdate = birthdate;
 }
 
-Persona::Persona(const Persona& object){
-    nombre_real = object.nombre_real;
-    usuario = object.usuario;
-    password = object.password;
-    edad = object.edad;
-    birthdate = object.birthdate;
-    identidad = object.identidad;
-
-}
 
 int Persona::setEdad(int edad){
     this->edad = edad;

@@ -11,7 +11,7 @@ public:
     string setPuesto(string);
     void getClave();
     void getPuesto();
-    virtual toString();
+    virtual string toString();
 };
 
 #endif // ADMINISTRATIVO_H

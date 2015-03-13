@@ -13,7 +13,6 @@ public:
     string setPassword(string);
     string setBirthdate(string);
     string setId(string);
-    Persona(const Persona&);
     int setEdad(int);
     void getNombre()const;
     void getUsuario()const;
