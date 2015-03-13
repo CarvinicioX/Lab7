@@ -76,4 +76,5 @@ string Caso::toString()const {
 		ss << ", Evidencia #" << i + 1 << Evidence[i].toString();
 	}
 	ss << ", Incidente: " << incidente << ", Fecha Incidente: " << fechaIncidente << endl;
+	return ss.str();
 }
