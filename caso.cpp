@@ -14,10 +14,6 @@ Caso::Caso(int numCaso, vector<Investigador> Invest, vector<Evidencia> Evidence,
 	this -> cerrado = cerrado;
 }
 
-Caso::Caso(const Caso&) {
-
-}
-
 void Caso::setNumCaso(int numCaso) {
 	this -> numCaso = numCaso;
 }

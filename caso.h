@@ -17,7 +17,6 @@ class Caso {
 	bool cerrado;
 public:
 	Caso(int, vector<Investigador>, vector<Evidencia>, string, string, bool);
-	Caso(const Caso&);
 	void setNumCaso(int);
 	void setInvestigador(Investigador);
 	void setEvidencia(Evidencia);
