@@ -2,6 +2,7 @@
 #define PERSONA_H
 #include <string>
 
+
 using std::string;
 class Persona{
         string nombre_real, usuario, password, identidad, birthdate;
