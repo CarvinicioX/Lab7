@@ -31,4 +31,6 @@ public:
 	string getFechaIncidente()const;
 	bool getCerrado()const;
 	virtual string toString()const;
-}
+};
+
+#endif
