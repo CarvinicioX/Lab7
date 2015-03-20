@@ -58,6 +58,6 @@ string Homicidio::toString()const {
 	ss << ", Victima: " << Victima;
 }
 
-int getTipo(){
+int Homicidio::getTipo(){
 	return 2;
 }

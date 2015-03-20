@@ -42,8 +42,8 @@ int Caso::getNumCaso()const {
 	return numCaso;
 }
 
-Investigador Caso::getInvestigador(int n)const {
-	return *Invest[n];
+Persona* Caso::getInvestigador(int n)const {
+	return Invest[n];
 }
 
 Evidencia Caso::getEvidencia(int n)const {

@@ -18,15 +18,20 @@ int MenuAddCaso();
 Persona* readPersona();
 Evidencia* readEvidencia();
 int MenuListar();
-int identifyingPerson(vector<Persona*>listpersonas);
+int identifyingPerson(vector<Persona*>);
+Caso* agregarCaso(const vector<Persona*>&, const vector<Evidencia*>&);
 
 int main(int argc, char *argv[]){
 	vector<Persona*> listpersonas;
 	vector<Caso*> listcasos;
 	vector<Evidencia*> listevidencias;
-	int resp=1;	
-		while(resp<3){
-			int id=identifyingPerson();
+	int resp=1;
+
+		while(resp<4){
+			while(listpersonas.size()<5){
+				listpersonas.push_back(readPersona());
+			}
+			int id=identifyingPerson(listpersonas);
 			resp=Menu();
 			switch(resp){
 				case 1:{
@@ -37,17 +42,7 @@ int main(int argc, char *argv[]){
 						}
 						break;
 						case 2:{
-							int resp_caso=MenuAddCaso();
-							switch(resp_caso){
-								case 1:{
-
-								}
-								break;
-								case 2:{
-
-								}
-								break;
-							}//fin switch add caso
+							listcasos.push_back(agregarCaso(listpersonas,listevidencias));
 						}
 						break;
 						case 3:{
@@ -369,7 +364,9 @@ Evidencia* readEvidencia(){
 }
 int identifyingPerson(vector<Persona*>listpersonas){
     int pos;
-    int id;
+    int id, control=0;
+    string pass;
+    while(control==0){
     if(listpersonas.size()==0){
     	return 0;
     }else{
@@ -380,12 +377,142 @@ int identifyingPerson(vector<Persona*>listpersonas){
 	    }
 	    cout << "Seleccione la posicion de la persona que quiere: ";
 	    cin >> pos;
-
+	    cout << "password: ";
+	    cin >> pass;
+	    if (listpersonas[pos]->getPassword() != pass)
+	    {
+	    	cerr << "WRONG PASSWORD!" << endl << endl;
+	    	control=0;
+	    }else{
+	    	control=9;
+	    }
 	    
 	    id=listpersonas[pos]->getId();
 
-	    return id;	
+	    	
     }
+    return id;
+}
     
     
+}
+
+Caso* agregarCaso(const vector<Persona*>& listpersonas, const vector<Evidencia*>& listevidencias) {
+	int numCaso, Resp = 0, Indice = 0;
+	vector<Persona*> Invest;
+	vector<Evidencia*> Evidence;
+	string incidente, fechaIncidente;
+	bool cerrado;
+	do {
+		cout << "Agregar Caso\n1.Homicidio\n2.Secuestro" << endl;
+		cin >> Resp;
+		if (Resp < 1 || Resp > 2) {
+			cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+		} else {
+			break;
+		}
+	} while (true);
+	cout << "Ingrese el # de Caso" << endl;
+	cin >> numCaso;
+	do {
+		for (int i = 0; i < listpersonas.size(); ++i) {
+			if (listpersonas[i]->getId() == 2) {
+				cout << i + 1 << listpersonas[i]->toString() << endl;
+			}
+		}
+		cout << "Ingrese el Sub-indice del Investigador(Si Ingresa \"0\" se Tomara Como que Quiere Salir)" << endl;
+		cin >> Indice;
+		if (Indice == 0) {
+			break;
+		}
+		if (Indice < 1 || Indice > listpersonas.size() - 1) {
+			cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+		} else {
+			Invest.push_back(listpersonas[Indice]);
+			cout << "Agregado" << endl;
+		}
+	} while (true);
+	do {
+		for (int i = 0; i < listevidencias.size(); ++i) {
+			
+				cout << i + 1 << listevidencias[i]->toString() << endl;
+			
+		}
+		cout << "Ingrese el Sub-indice de la Evidencia(Si Ingresa \"0\" se Tomara Como que Quiere Salir)" << endl;
+		cin >> Indice;
+		if (Indice == 0) {
+			break;
+		}
+		if (Indice < 1 || Indice > listevidencias.size() - 1) {
+			cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+		} else {
+			Evidence.push_back(listevidencias[Indice]);
+			cout << "Agregado" << endl;
+		}
+	} while (true);
+	cout << "Ingrese el Incidente" << endl;
+	cin >> incidente;
+	cout << "Ingrese la Fecha del Incidente" << endl;
+	cin >> fechaIncidente;
+	cout << "Esta Cerrado el Caso[1.Si/0.No]" << endl;
+	cin >> cerrado;
+	switch (Resp) {
+		case 1:
+			{
+				vector<string> Sospechosos;
+				string SospechosoPrincipal, NombreCulpable, Victima, Sospechoso;
+				while (true) {
+					cout << "Ingrese el Nombre del Sospechoso(Si Ingresa \"no\" se Tomara Como Que ya no Seguira Ingresando Sospechosos)" << endl;
+					cin >> Sospechoso;
+					if (Sospechoso == "no") {
+						break;
+					} else {
+						Sospechosos.push_back(Sospechoso);
+					}
+				}
+				cout << "Ingrese el Sospechoso Principal" << endl;
+				cin >> SospechosoPrincipal;
+				cout << "Ingrese la Victima" << endl;
+				cin >> Victima;
+				if (cerrado) {
+					cout << "Ingrese el Culpable" << endl;
+					cin >> NombreCulpable;
+				} else {
+					NombreCulpable = "";
+				}
+				return new Homicidio(numCaso, Invest, Evidence, incidente, fechaIncidente, cerrado, Sospechosos, SospechosoPrincipal, NombreCulpable, Victima);
+			}
+			break;
+		case 2:
+			{
+				string nom_victima, lugar_s, motivo;
+				int cant;
+				bool rescate;
+				bool estado;
+				cout << "Ingrese el Nombre de la Victima" << endl;
+				cin >> nom_victima;
+				cout << "Ingrese el Lugar de Secuestro" << endl;
+				cin >> lugar_s;
+				cout << "Ingrese el Motivo" << endl;
+				cin >> motivo;
+				cout << "Se Pidio Rescate[1.Si/0.No]" << endl;
+				cin >> rescate;
+				if (rescate) {
+					cout << "Ingrese el Monto del Rescate" << endl;
+					cin >> cant;
+				} else {
+					cant = 0;
+				}
+				cout << "Esta Viva la Victima[1.Si/0.No]" << endl;
+				int cx;
+				cin>>cx;
+				if(cx==1){
+					estado=true;
+				}else{
+					estado=false;
+				}
+				return new Secuestro(numCaso, Invest, Evidence, incidente, fechaIncidente, cerrado, nom_victima, lugar_s, motivo, cant, rescate, estado);
+			}
+			break;
+	}
 }

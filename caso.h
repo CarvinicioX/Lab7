@@ -11,20 +11,20 @@ using std::vector;
 
 class Caso {
 	int numCaso;
-	vector <Investigador> Invest;
-	vector <Evidencia> Evidence;
+	vector <Persona*> Invest;
+	vector <Evidencia*> Evidence;
 	string incidente, fechaIncidente;
 	bool cerrado;
 public:
-	Caso(int, vector<Personas*>, vector<Evidencia*>, string, string, bool);
+	Caso(int, vector<Persona*>, vector<Evidencia*>, string, string, bool);
 	void setNumCaso(int);
-	void setInvestigador(Investigador);
-	void setEvidencia(Evidencia);
+	void setInvestigador(Persona*);
+	void setEvidencia(Evidencia*);
 	void setIncidente(string);
 	void setFechaIncidente(string);
 	void setCerrado(bool);
 	int getNumCaso()const;
-	Persona getInvestigador(int)const;
+	Persona* getInvestigador(int)const;
 	Evidencia getEvidencia(int)const;
 	string getIncidente()const;
 	string getFechaIncidente()const;

@@ -82,6 +82,6 @@ bool Secuestro::getEstado() const{
 	return estado;
 }
 
-int getTipo(){
+int Secuestro::getTipo(){
 	return 1;
 }
