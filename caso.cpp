@@ -35,7 +35,7 @@ void Caso::setFechaIncidente(string fechaIncidente) {
 }
 
 void Caso::setCerrado(bool cerrado) {
-	this -> cerrado = cerrado
+	this -> cerrado = cerrado;
 }
 
 int Caso::getNumCaso()const {
@@ -59,16 +59,16 @@ string Caso::getFechaIncidente()const {
 }
 
 bool Caso::getCerrado()const {
-	return Cerrado;
+	return cerrado;
 }
 
 string Caso::toString()const {
 	stringstream ss;
 	string Cerradobool = "Cerrado";
-	if (Cerrado) {
+	if (cerrado) {
 		Cerradobool = "Abierto";
 	}
-	ss << "Caso= Número de Caso: " << NumCaso;
+	ss << "Caso= Número de Caso: " << numCaso;
 	for (int i = 0; i < Invest.size(); i++) {
 		ss << ", Investigador #" << i + 1 << Invest[i].toString();
 	}

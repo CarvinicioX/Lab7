@@ -24,8 +24,8 @@ public:
 	void setFechaIncidente(string);
 	void setCerrado(bool);
 	int getNumCaso()const;
-	Investigador getInvestigador()const;
-	Evidencia getEvidencia()const;
+	Investigador getInvestigador(int)const;
+	Evidencia getEvidencia(int)const;
 	string getIncidente()const;
 	string getFechaIncidente()const;
 	bool getCerrado()const;
