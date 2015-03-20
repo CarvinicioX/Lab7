@@ -107,4 +107,5 @@ Evidencia* readEvidencia(){
     }else{
         procesada=false;
     }
+    return new Evidencia(nom, tipo_objeto, lugar, huellas, procesada);
 }

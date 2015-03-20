@@ -16,11 +16,13 @@ int MenuAgregar();
 int MenuAddPersonas();
 int MenuAddCaso();
 Persona* readPersona();
+Evidencia* readEvidencia();
+int MenuListar();
 
 int main(int argc, char *argv[]){
 	vector<Persona*> listpersonas;
 	vector<Caso*> listcasos;
-	vector<Evidencia> listevidencias;
+	vector<Evidencia*> listevidencias;
 	int resp=1;	
 		while(resp<3){
 			resp=Menu();
@@ -47,23 +49,140 @@ int main(int argc, char *argv[]){
 						}
 						break;
 						case 3:{
-
+							listevidencias.push_back(readEvidencia());
 						}
 						break;
 					}//fin switch add 
 				}
 				break;
 				case 2:{
-
+					int Resp = 0, Indice = 0;
+			do {
+		  		cout << "Que Desea Eliminar:\n1.Personal\n2.Caso\n3.Evidencia" << endl;
+				cin >> Resp;
+				if (Resp < 1 || Resp > 3) {
+					cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+				} else {
+					break;
+				}
+			} while (true);
+			if (Resp == 1 && listpersonas.empty()) {
+				cout << "No hay Personal" << endl;
+				break;
+			}
+			if (Resp == 2 && listcasos.empty()) {
+				cout << "No hay Casos" << endl;
+				break;
+			}
+			if (Resp == 3 && listevidencias.empty()) {
+				cout << "No hay Evidencia" << endl;
+				break;
+			}
+			switch (Resp) {
+				case 1:
+					{
+						do {
+							for (int i = 0; i < listpersonas.size(); ++i) {
+								cout << i + 1 << listpersonas[i]->toString();
+							}
+							cout << "Ingrese el Sub-indice a Eliminar" << endl;
+							cin >> Indice;
+							Indice--;
+							if (Indice < 0 || Indice > listpersonas.size() - 1) {
+								cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+							} else {
+								break;
+							}
+						} while (true);
+						delete listpersonas.at(Indice);
+						listpersonas.erase(listpersonas.begin() + Indice);
+					}
+					break;
+				case 2:
+					{
+						do {
+							for (int i = 0; i < listcasos.size(); ++i) {
+								cout << i + 1 << listcasos[i]->toString();
+							}
+							cout << "Ingrese el Sub-indice a Eliminar" << endl;
+							cin >> Indice;
+							Indice--;
+							if (Indice < 0 || Indice > listcasos.size() - 1) {
+								cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+							} else {
+								break;
+							}
+						} while (true);
+						delete listcasos.at(Indice);
+						listcasos.erase(listcasos.begin() + Indice);
+					}
+					break;
+				case 3: 
+					{
+						do {
+							for (int i = 0; i < listevidencias.size(); ++i) {
+								cout << i + 1 << listevidencias[i]->toString();
+							}
+							cout << "Ingrese el Sub-indice a Eliminar" << endl;
+							cin >> Indice;
+							Indice--;
+							if (Indice < 0 || Indice > listevidencias.size() - 1) {
+								cout << "Error Fuera de los Parametros\nIngrese Nuevamente" << endl;
+							} else {
+								break;
+							}
+						} while (true);
+						delete listevidencias.at(Indice);
+						listevidencias.erase(listevidencias.begin() + Indice);
+					}
+					break;
+			}
+	
 				}
 				break;
 				case 3:{
-					cout<<"ADIOS"<<endl;
+					int resp_1=MenuListar();
+					switch(resp_1){
+						case 1:{
+							for (int i = 0; i < listpersonas.size(); ++i) {
+								cout << i + 1 << listpersonas[i]->toString();
+							}
+						}
+						break;
+						case 2:{
+							for (int i = 0; i < listcasos.size(); ++i) {
+								cout << i + 1 << listcasos[i]->toString();
+							}
+						}
+						break;
+						case 3:{
+							for (int i = 0; i < listevidencias.size(); ++i) {
+								cout << i + 1 << listevidencias[i]->toString();
+							}
+						}
+						break;
+					}
 				}
 				break;
+				case 4:{
+					cout<<"ADIOS"<<endl;
+				}
 			}//fin switch
 		}//fin while
 	return 0;
+}
+
+int MenuListar(){
+	int x;
+	cout<<"__________MENU_LISTAR__________"<<endl;
+	cout<<"1. Listar Personas"<<endl;
+	cout<<"2. Listar Casos"<<endl;
+	cout<<"3. Listar Evidencias"<<endl;
+	cin>>x;
+	if(x<1||x>3){
+		x=3;
+	}
+	return x;
 }
 
 int Menu(){
@@ -71,10 +190,11 @@ int Menu(){
 	cout<<"_________MENU__________"<<endl;
 	cout<<"1. Agregar"<<endl;
 	cout<<"2. Eliminar"<<endl;
-	cout<<"3. Salir"<<endl;
+	cout<<"3. Reporte"<<endl;
+	cout<<"4. Salir"<<endl;
 	cout<<"_______________________"<<endl;
 	cin>>x;
-	if(x>3||x<1){
+	if(x>4||x<1){
 		x=3;
 	}
 	return x;
@@ -194,4 +314,40 @@ Persona* readPersona(){
         return new Investigador(nombre_real, usuario, password, edad, birthdate, identidad, abiertos, cerrados, sin_resolver);
     }
 
+}
+
+Evidencia* readEvidencia(){
+    string nom, tipo_objeto, lugar;
+    int asd;
+    bool huellas, procesada;
+    cout << "Ingreso de datos de Evidencia" << endl;
+    cout << "Nombre: ";
+    cin >> nom;
+    cout << "Tipo de objeto: ";
+    cin >> tipo_objeto;
+    cout << "¿Tiene huellas? (1. si, 2. no)";
+    cin >> asd;
+    while(asd<1||asd>2){
+        cerr << "solo hay dos opciones..." << endl;
+        cout << "Tiene huellas (1. si, 2. no)";
+        cin >> asd;
+    }
+    if(asd==1){
+        huellas=true;
+    }else{
+        huellas=false;
+    }
+    cout << "¿Procesada? (1. si, 2. no)";
+    cin >> asd;
+    while(asd<1||asd>2){
+        cerr << "solo hay dos opciones..." << endl;
+        cout << "¿Procesada? (1. si, 2. no)";
+        cin >> asd;
+    }
+    if(asd==1){
+        procesada=true;
+    }else{
+        procesada=false;
+    }
+    return new Evidencia(nom, tipo_objeto, lugar, huellas, procesada);
 }
