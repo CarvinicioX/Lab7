@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Homicidio::Homicidio(int numCaso, vector<Investigador> Invest, vector<Evidencia> Evidence, string incidente, string fechaIncidente, bool cerrado, vector<string> Sospechosos, string SospechosoPrincipal, string NombreCulpable, string Victima):Caso(numCaso, Invest, Evidence, incidente, fechaIncidente, cerrado) {
+Homicidio::Homicidio(int numCaso, vector<Investigador*> Invest, vector<Evidencia*> Evidence, string incidente, string fechaIncidente, bool cerrado, vector<string> Sospechosos, string SospechosoPrincipal, string NombreCulpable, string Victima):Caso(numCaso, Invest, Evidence, incidente, fechaIncidente, cerrado) {
 	this -> Sospechosos = Sospechosos;
 	this -> SospechosoPrincipal = SospechosoPrincipal;
 	this -> NombreCulpable = NombreCulpable;

@@ -14,7 +14,7 @@ class Secuestro : public Caso{
 	int cant;
 	bool rescate, estado;
 public:
-	Secuestro(int,vector<Investigador>,vector<Evidencia>,string,string,bool,string,string,string,int,bool,bool);
+	Secuestro(int,vector<Investigador*>,vector<Evidencia*>,string,string,bool,string,string,string,int,bool,bool);
 	Secuestro( const Secuestro&);
 	virtual string toString() const;
 	void setNom_victima(string);

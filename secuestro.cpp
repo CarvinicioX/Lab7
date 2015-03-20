@@ -8,7 +8,7 @@
 
 using namespace std;
 
-Secuestro::Secuestro(int numCaso,vector<Investigador> Invest,vector<Evidencia> Evidence,string incidente,string fechaIncidente,bool cerrado,string nom_victima,string lugar_s,string motivo,int cant,bool rescate,bool estado)
+Secuestro::Secuestro(int numCaso,vector<Investigador*> Invest,vector<Evidencia*> Evidence,string incidente,string fechaIncidente,bool cerrado,string nom_victima,string lugar_s,string motivo,int cant,bool rescate,bool estado)
 	: Caso(numCaso,Invest,Evidence,incidente,fechaIncidente,cerrado){
 		setNom_victima(nom_victima);
 		setLugar_s(lugar_s);

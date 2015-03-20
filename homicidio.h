@@ -11,7 +11,7 @@ class Homicidio: public Caso {
 	vector<string> Sospechosos;
 	string SospechosoPrincipal, NombreCulpable, Victima;
 public:
-	Homicidio(int, vector<Investigador>, vector<Evidencia>, string, string, bool, vector<string>, string, string, string);
+	Homicidio(int, vector<Investigador*>, vector<Evidencia*>, string, string, bool, vector<string>, string, string, string);
 	void setSospechoso(string);
 	void setSospechosoPrincipal(string);
 	void setNombreCulpable(string);

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Caso::Caso(int numCaso, vector<Investigador> Invest, vector<Evidencia> Evidence, string incidente, string fechaIncidente, bool cerrado) {
+Caso::Caso(int numCaso, vector<Investigador*> Invest, vector<Evidencia*> Evidence, string incidente, string fechaIncidente, bool cerrado) {
 	this -> numCaso = numCaso;
 	this -> Invest = Invest;
 	this -> Evidence = Evidence;
