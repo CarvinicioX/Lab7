@@ -2,6 +2,7 @@
 #include "persona.h"
 #include <string>
 #include <sstream>
+using namespace std;
 Administrativo::Administrativo(string nombre_real, string usuario, string password, int edad, string birthdate, string identidad, string clave, string puesto):Persona(nombre_real, usuario, password, edad, birthdate, identidad){
 
 }

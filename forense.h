@@ -3,6 +3,7 @@
 #include <string>
 #include "persona.h"
 
+
 class Forense: public Persona{
     string ingreso, horario;
 public:
