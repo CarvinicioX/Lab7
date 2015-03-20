@@ -1,4 +1,4 @@
-#include "Caso.h"
+#include "caso.h"
 #include "secuestro.h"
 #include <string>
 #include <vector>

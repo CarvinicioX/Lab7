@@ -1,7 +1,7 @@
 #ifndef SECUESTRO_H
 #define SECUESTRO_H
 
-#include "Caso.h"
+#include "caso.h"
 #include <string>
 #include <vector>
 #include "Evidencia.h"
