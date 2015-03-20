@@ -5,7 +5,8 @@
 
 using namespace std;
 Forense::Forense(string nombre_real, string usuario, string password, int edad, string birthdate, string identidad, string ingreso, string horario):Persona(nombre_real, usuario, password, edad, birthdate, identidad){
-
+	setIngreso(ingreso);
+	setHorario(horario);
 }
 
 void Forense::setIngreso(string ingreso){
