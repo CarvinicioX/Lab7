@@ -7,9 +7,9 @@ using std::string;
 
 class Evidencia{
 	string nom,tipo_objeto,lugar;
-	bool huellas, procesada;
+	bool huellas=false, procesada=false;
 public:
-	Evidenca(string,string,string,bool,bool);
+	Evidencia(string,string,string,bool,bool);
 	string toString() const;
 	void setNom(string);
 	void setTipo_objeto(string);

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Evidenca::Evidenca(string nom,string tipo_objeto,string lugar,bool huellas,bool procesada){
+Evidencia::Evidencia(string nom,string tipo_objeto,string lugar,bool huellas,bool procesada){
 	setNom(nom);
 	setTipo_objeto(tipo_objeto);
 	setLugar(lugar);
@@ -12,7 +12,7 @@ Evidenca::Evidenca(string nom,string tipo_objeto,string lugar,bool huellas,bool 
  	setProcesada(procesada);
  }
 	
-string Evidenca::toString() const{
+string Evidencia::toString() const{
 	stringstream ss;
 	string a="NO";
 		if(huellas)
@@ -24,42 +24,42 @@ string Evidenca::toString() const{
 	return ss.str();
 }
 
-void Evidenca::Evidenca::setNom(string nom){
+void Evidencia::Evidencia::setNom(string nom){
 	this->nom=nom;
 }
 
-void Evidenca::setTipo_objeto(string tipo_objeto){
+void Evidencia::setTipo_objeto(string tipo_objeto){
 	this->tipo_objeto=tipo_objeto;
 }
 
-void Evidenca::setLugar(string lugar){
+void Evidencia::setLugar(string lugar){
 	this->lugar=lugar;
 }
 
-void Evidenca::setHuellas(bool huellas){
+void Evidencia::setHuellas(bool huellas){
 	this->huellas=huellas;
 }
 
-void Evidenca::setProcesada(bool procesada){
+void Evidencia::setProcesada(bool procesada){
 	this->procesada=procesada;
 }
 
-string Evidenca::getNom() const{
+string Evidencia::getNom() const{
 	return nom;
 }
 
-string Evidenca::getTipo_objeto() const{
+string Evidencia::getTipo_objeto() const{
 	return tipo_objeto;
 }
 
-string Evidenca::getLugar() const{
+string Evidencia::getLugar() const{
 	return lugar;
 }
 
-bool Evidenca::getHuellas() const{
+bool Evidencia::getHuellas() const{
 	return huellas;
 }	
 	
-bool Evidenca::getProcesada() const{
+bool Evidencia::getProcesada() const{
 	return procesada;
 }
