@@ -1,5 +1,6 @@
 #include "forense.h"
 #include <string>
+#include <sstream>
 Forense::Forense(string nombre_real, string usuario, string password, int edad, string birthdate, string identidad, string ingreso, string horario):Persona(nombre_real, usuario, password, edad, birthdate, identidad){
 
 }
@@ -13,13 +14,15 @@ string Forense::setHorario(string horario){
 }
 
 void getIngreso(){
-
+    return ingreso;
 }
 
 void getHorario(){
-
+    return horario;
 }
 
 virtual string toString()const{
-
+    stringstream ss;
+    ss << Persona::toString();
+    return ss.str();
 }
