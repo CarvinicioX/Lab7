@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Caso::Caso(int numCaso, vector<Investigador*> Invest, vector<Evidencia*> Evidence, string incidente, string fechaIncidente, bool cerrado) {
+Caso::Caso(int numCaso, vector<Persona*> Invest, vector<Evidencia*> Evidence, string incidente, string fechaIncidente, bool cerrado) {
 	this -> numCaso = numCaso;
 	this -> Invest = Invest;
 	this -> Evidence = Evidence;
@@ -18,11 +18,11 @@ void Caso::setNumCaso(int numCaso) {
 	this -> numCaso = numCaso;
 }
 
-void Caso::setInvestigador(Investigador investi) {
+void Caso::setInvestigador(Persona* investi) {
 	Invest.push_back(investi);
 }
 
-void Caso::setEvidencia(Evidencia eviden) {
+void Caso::setEvidencia(Evidencia* eviden) {
 	Evidence.push_back(eviden);
 }
 
@@ -43,11 +43,11 @@ int Caso::getNumCaso()const {
 }
 
 Investigador Caso::getInvestigador(int n)const {
-	return Invest[n];
+	return *Invest[n];
 }
 
 Evidencia Caso::getEvidencia(int n)const {
-	return Evidence[n];
+	return *Evidence[n];
 }
 
 string Caso::getIncidente()const {
@@ -70,10 +70,10 @@ string Caso::toString()const {
 	}
 	ss << "Caso= Número de Caso: " << numCaso;
 	for (int i = 0; i < Invest.size(); i++) {
-		ss << ", Investigador #" << i + 1 << Invest[i].toString();
+		ss << ", Investigador #" << i + 1 << Invest[i]->toString();
 	}
 	for (int i = 0; i < Evidence.size(); ++i) {
-		ss << ", Evidencia #" << i + 1 << Evidence[i].toString();
+		ss << ", Evidencia #" << i + 1 << Evidence[i]->toString();
 	}
 	ss << ", Incidente: " << incidente << ", Fecha Incidente: " << fechaIncidente << endl;
 	return ss.str();
