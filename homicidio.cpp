@@ -11,14 +11,38 @@ Homicidio::Homicidio(int numCaso, vector<Investigador> Invest, vector<Evidencia>
 	this -> Sospechosos = Sospechosos;
 }
 
-void Homicidio::setSospechoso(string);
-void Homicidio::setSospechosoPrincipal(string);
-void Homicidio::setNombreCulpable(string);
-void Homicidio::setVictima(string);
-string Homicidio::getSospechoso(int)const;
-string Homicidio::getSospechosoPrincipal()const;
-string Homicidio::getNombreCulpable()const;
-string Homicidio::getVictima()const;
+void Homicidio::setSospechoso(string Sospechoso) {
+	Sospechosos.push_back(Sospechoso);
+}
+
+void Homicidio::setSospechosoPrincipal(string SospechosoPrincipal) {
+	this -> SospechosoPrincipal = SospechosoPrincipal;
+}
+
+void Homicidio::setNombreCulpable(string NombreCulpable) {
+	this -> NombreCulpable = NombreCulpable;
+}
+
+void Homicidio::setVictima(string Victima) {
+	this -> Victima = Victima;
+}
+
+string Homicidio::getSospechoso(int Indice)const {
+	return Sospechosos.at(Indice);
+}
+
+string Homicidio::getSospechosoPrincipal()const {
+	return SospechosoPrincipal;
+}
+
+string Homicidio::getNombreCulpable()const {
+	return NombreCulpable;
+}
+
+string Homicidio::getVictima()const {
+	return Victima;
+}
+
 string Homicidio::toString()const {
 	stringstream ss;
 	ss << Caso::toString();
