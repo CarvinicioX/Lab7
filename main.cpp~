@@ -145,19 +145,19 @@ int main(int argc, char *argv[]){
 					switch(resp_1){
 						case 1:{
 							for (int i = 0; i < listpersonas.size(); ++i) {
-								cout << i + 1 << listpersonas[i]->toString() << endl;;
+								cout << i + 1 << listpersonas[i]->toString();
 							}
 						}
 						break;
 						case 2:{
 							for (int i = 0; i < listcasos.size(); ++i) {
-								cout << i + 1 << listcasos[i]->toString() << endl;
+								cout << i + 1 << listcasos[i]->toString();
 							}
 						}
 						break;
 						case 3:{
 							for (int i = 0; i < listevidencias.size(); ++i) {
-								cout << i + 1 << listevidencias[i]->toString() << endl;
+								cout << i + 1 << listevidencias[i]->toString();
 							}
 						}
 						break;
