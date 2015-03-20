@@ -76,7 +76,35 @@ Persona* readPersona(){
 }
 Evidencia* readEvidencia(){
     string nom, tipo_objeto, lugar;
+    int asd;
     bool huellas, procesada;
     cout << "Ingreso de datos de Evidencia" << endl;
     cout << "Nombre: ";
+    cin >> nom;
+    cout << "Tipo de objeto: ";
+    cin >> tipo_objeto;
+    cout << "¿Tiene huellas? (1. si, 2. no)";
+    cin >> asd;
+    do{
+        cerr << "solo hay dos opciones..." << endl;
+        cout << "Tiene huellas (1. si, 2. no)";
+        cin >> asd;
+    }while(asd>2 || asd <1);
+    if(asd==1){
+        huellas=true;
+    }else{
+        huellas=false;
+    }
+    cout << "¿Procesada? (1. si, 2. no)";
+    cin >> asd;
+    do{
+        cerr << "solo hay dos opciones..." << endl;
+        cout << "¿Procesada? (1. si, 2. no)";
+        cin >> asd;
+    }while(asd>2 || asd <1);
+    if(asd==1){
+        procesada=true;
+    }else{
+        procesada=false;
+    }
 }
