@@ -16,7 +16,7 @@ class Caso {
 	string incidente, fechaIncidente;
 	bool cerrado;
 public:
-	Caso(int, vector<Investigador*>, vector<Evidencia*>, string, string, bool);
+	Caso(int, vector<Personas*>, vector<Evidencia*>, string, string, bool);
 	void setNumCaso(int);
 	void setInvestigador(Investigador);
 	void setEvidencia(Evidencia);
@@ -24,7 +24,7 @@ public:
 	void setFechaIncidente(string);
 	void setCerrado(bool);
 	int getNumCaso()const;
-	Investigador getInvestigador(int)const;
+	Persona getInvestigador(int)const;
 	Evidencia getEvidencia(int)const;
 	string getIncidente()const;
 	string getFechaIncidente()const;
