@@ -22,9 +22,9 @@ Secuestro::Secuestro(int numCaso,vector<Investigador> Invest,vector<Evidencia> E
 		stringstream ss;
 		string a="NO", n="MUERTO";
 			if(rescate)
-				a="SI"
+				a="SI";
 			if(estado)
-				n="VIVO"
+				n="VIVO";
 		ss<<Caso::toString()<<" Nombre Victima : "<<nom_victima<<"Lugar : "<<lugar_s<<"Rescate : "<<a<<"Cantidad"<<a
 		<<"Motivo : "<<motivo;
 		return ss.str();	

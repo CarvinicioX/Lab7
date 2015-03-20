@@ -12,7 +12,7 @@ Investigador::Investigador(string nombre_real, string usuario, string password, 
 		setSin_resolver(sin_resolver);
 	}
 
-	Investigador::toString() const{
+	string Investigador::toString() const{
 		stringstream ss;
 		ss<<Persona::toString()<<"Casos Abiertos: "<<abiertos<<"Casos Cerrados: "<<cerrados<<"Casos sin Resolver: "
 		<<sin_resolver;
