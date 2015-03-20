@@ -5,19 +5,19 @@ Forense::Forense(string nombre_real, string usuario, string password, int edad, 
 
 }
 
-string Forense::setIngreso(string ingreso){
+void Forense::setIngreso(string ingreso){
     this->ingreso = ingreso;
 }
 
-string Forense::setHorario(string horario){
+void Forense::setHorario(string horario){
     this->horario = horario;
 }
 
-void Forense::getIngreso(){
+string Forense::getIngreso(){
     return ingreso;
 }
 
-void Forense::getHorario(){
+string Forense::getHorario(){
     return horario;
 }
 

@@ -32,10 +32,15 @@ void Persona::setBirthdate(string birthdate){
 }
 
 
-int Persona::setEdad(int edad){
+void Persona::setEdad(int edad){
     this->edad = edad;
 }
-string Persona::setId();
+int Persona::getEdad(){
+    return edad;
+}
+string Persona::setIdentidad(string identidad){
+    this->identidad = identidad;
+}
 
 string Persona::getNombre()const{
     return nombre_real;
@@ -46,7 +51,7 @@ string Persona::getUsuario()const{
 string Persona::getPassword()const{
     return password;
 }
-string Persona::getId()const{
+string Persona::getIdentidad()const{
     return identidad;
 }
 string Persona::getBirthdate()const{

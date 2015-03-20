@@ -7,12 +7,14 @@ class Administrativo: public Persona{
     string clave, puesto;
 public:
     Administrativo(string, string, string, int, string, string, string, string);
-    string setClave(string);
-    string setPuesto(string);
-    void getClave();
-    void getPuesto();
+    void setClave(string);
+    void setPuesto(string);
+    string getClave();
+    string getPuesto();
     virtual string toString();
     virtual int getId();
+    
+
 };
 
 #endif // ADMINISTRATIVO_H

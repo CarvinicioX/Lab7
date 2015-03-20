@@ -7,10 +7,10 @@ class Forense: public Persona{
     string ingreso, horario;
 public:
     Forense(string, string, string, int, string, string, string, string);
-    string setIngreso(string);
-    string setHorario(string);
-    void getIngreso();
-    void getHorario();
+    void setIngreso(string);
+    void setHorario(string);
+    string getIngreso();
+    string getHorario();
     virtual string toString()const;
     virtual int getId();
 };

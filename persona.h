@@ -9,17 +9,18 @@ class Persona{
         int edad;
 public:
     Persona(string, string, string, int, string, string);
-    string setNombre(string);
-    string setUsuario(string);
-    string setPassword(string);
-    string setBirthdate(string);
-    string setId(string);
-    int setEdad(int);
-    void getNombre()const;
-    void getUsuario()const;
-    void getPassword()const;
-    void getId()const;
-    void getBirthdate()const;
+    void setNombre(string);
+    void setUsuario(string);
+    void setPassword(string);
+    void setBirthdate(string);
+    void setIdentidad(string);
+    void setEdad(int);
+    string getNombre()const;
+    string getUsuario()const;
+    string getPassword()const;
+    string getIdentidad()const;
+    int getEdad();
+    string getBirthdate()const;
     virtual string toString()const;
     virtual int getId()=0;
 

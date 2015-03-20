@@ -6,19 +6,19 @@ Administrativo::Administrativo(string nombre_real, string usuario, string passwo
 
 }
 
-string Administrativo::setClave(string clave){
+void Administrativo::setClave(string clave){
     this->clave = clave;
 }
 
-string Administrativo::setPuesto(string){
+void Administrativo::setPuesto(string){
     this->puesto = puesto;
 }
 
-void Administrativo::getClave(){
+string Administrativo::getClave(){
     return clave;
 }
 
-void Administrativo::getPuesto(){
+string Administrativo::getPuesto(){
     return puesto;
 }
 
