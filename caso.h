@@ -30,6 +30,7 @@ public:
 	string getFechaIncidente()const;
 	bool getCerrado()const;
 	virtual string toString()const;
+	virtual int getTipo()=0;
 };
 
 #endif

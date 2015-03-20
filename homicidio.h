@@ -21,6 +21,7 @@ public:
 	string getNombreCulpable()const;
 	string getVictima()const;
 	virtual string toString()const;
+	virtual int getTipo();
 };
 
 #endif

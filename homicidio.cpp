@@ -57,3 +57,7 @@ string Homicidio::toString()const {
 	}
 	ss << ", Victima: " << Victima;
 }
+
+int getTipo(){
+	return 2;
+}

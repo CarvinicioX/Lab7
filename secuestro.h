@@ -29,6 +29,7 @@ public:
 	int getCant() const;
 	bool getRescate() const;
 	bool getEstado() const;
+	virtual int getTipo();
 };
 
 #endif

@@ -18,6 +18,7 @@ int MenuAddCaso();
 Persona* readPersona();
 Evidencia* readEvidencia();
 int MenuListar();
+int identifyingPerson(vector<Persona*>listpersonas);
 
 int main(int argc, char *argv[]){
 	vector<Persona*> listpersonas;
@@ -25,6 +26,7 @@ int main(int argc, char *argv[]){
 	vector<Evidencia*> listevidencias;
 	int resp=1;	
 		while(resp<3){
+			int id=identifyingPerson();
 			resp=Menu();
 			switch(resp){
 				case 1:{
@@ -49,7 +51,9 @@ int main(int argc, char *argv[]){
 						}
 						break;
 						case 3:{
-							listevidencias.push_back(readEvidencia());
+							if (id==2){
+								listevidencias.push_back(readEvidencia());
+							}	
 						}
 						break;
 					}//fin switch add 
@@ -150,9 +154,21 @@ int main(int argc, char *argv[]){
 						}
 						break;
 						case 2:{
-							for (int i = 0; i < listcasos.size(); ++i) {
-								cout << i + 1 << listcasos[i]->toString() << endl;
+							if(id==1){
+								for (int i = 0; i < listcasos.size(); ++i) {
+									if(listcasos[i]->getTipo()==1)
+									cout << i + 1 << listcasos[i]->toString() << endl;
 							}
+							}else if(id==3){
+								for (int i = 0; i < listcasos.size(); ++i) {
+									if(listcasos[i]->getTipo()==2)
+									cout << i + 1 << listcasos[i]->toString() << endl;
+							}	
+							}
+								for (int i = 0; i < listcasos.size(); ++i) {
+									cout << i + 1 << listcasos[i]->toString() << endl;
+							}
+							
 						}
 						break;
 						case 3:{
@@ -350,4 +366,26 @@ Evidencia* readEvidencia(){
         procesada=false;
     }
     return new Evidencia(nom, tipo_objeto, lugar, huellas, procesada);
+}
+int identifyingPerson(vector<Persona*>listpersonas){
+    int pos;
+    int id;
+    if(listpersonas.size()==0){
+    	return 0;
+    }else{
+	    cout << "Aqui estan todas las personas: " << endl;
+	    for (int i = 0; i < listpersonas.size(); ++i)
+	    {
+	        cout << i << ": " << listpersonas[i]->getUsuario() << endl;
+	    }
+	    cout << "Seleccione la posicion de la persona que quiere: ";
+	    cin >> pos;
+
+	    
+	    id=listpersonas[pos]->getId();
+
+	    return id;	
+    }
+    
+    
 }

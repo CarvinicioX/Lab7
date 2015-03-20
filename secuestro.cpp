@@ -81,3 +81,7 @@ bool Secuestro::getRescate() const{
 bool Secuestro::getEstado() const{
 	return estado;
 }
+
+int getTipo(){
+	return 1;
+}
