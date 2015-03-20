@@ -12,7 +12,7 @@ Persona::Persona(string nombre_real, string usuario, string password, int edad, 
     setUsuario(usuario);
     setPassword(password);
     setEdad(edad);
-    setId(identidad);
+    setIdentidad(identidad);
     setBirthdate(birthdate);
 }
 void Persona::setNombre(string nombre_real){
@@ -38,7 +38,7 @@ void Persona::setEdad(int edad){
 int Persona::getEdad(){
     return edad;
 }
-string Persona::setIdentidad(string identidad){
+void Persona::setIdentidad(string identidad){
     this->identidad = identidad;
 }
 
@@ -59,6 +59,6 @@ string Persona::getBirthdate()const{
 }
 string Persona::toString()const{
     stringstream ss;
-    ss << "Identidad: " << identidad << " Nombre" << nombre;
+    ss << "Identidad: " << identidad << " Nombre" << nombre_real;
     return ss.str();
 }
