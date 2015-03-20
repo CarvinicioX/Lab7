@@ -42,3 +42,7 @@ Investigador::Investigador(string nombre_real, string usuario, string password, 
 	int Investigador::getSin_resolver() const{
 		return sin_resolver;
 	}
+
+	int Investigador::getId(){
+		return 2;
+	}

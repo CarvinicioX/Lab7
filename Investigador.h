@@ -17,6 +17,7 @@ public:
 	int getAbiertos() const;
 	int getCerrados() const;
 	int getSin_resolver() const;
+	virtual int getId();
 
 };
 

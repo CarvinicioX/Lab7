@@ -27,3 +27,7 @@ string Administrativo::toString(){
     ss << Persona::toString();
     return ss.str();
 }
+
+int Administrativo::getId(){
+	return 1;
+}

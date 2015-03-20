@@ -13,16 +13,20 @@ string Forense::setHorario(string horario){
     this->horario = horario;
 }
 
-void getIngreso(){
+void Forense::getIngreso(){
     return ingreso;
 }
 
-void getHorario(){
+void Forense::getHorario(){
     return horario;
 }
 
-virtual string toString()const{
+string Forense::toString()const{
     stringstream ss;
     ss << Persona::toString();
     return ss.str();
+}
+
+int Forense::getId(){
+	return 3;
 }

@@ -12,6 +12,7 @@ public:
     void getIngreso();
     void getHorario();
     virtual string toString()const;
+    virtual int getId();
 };
 
 #endif // FORENSE_H

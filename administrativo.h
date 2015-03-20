@@ -12,6 +12,7 @@ public:
     void getClave();
     void getPuesto();
     virtual string toString();
+    virtual int getId();
 };
 
 #endif // ADMINISTRATIVO_H

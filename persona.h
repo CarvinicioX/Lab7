@@ -21,6 +21,7 @@ public:
     void getId()const;
     void getBirthdate()const;
     virtual string toString()const;
+    virtual int getId()=0;
 
 };
 
